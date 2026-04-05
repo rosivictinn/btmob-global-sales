@@ -56,9 +56,9 @@ Deno.serve(async (req) => {
       customer: {
         name,
         email,
-        phone: "00000000000",
+        phone: phone.replace(/\D/g, ""),
         document: {
-          number: "00000000000",
+          number: cpf.replace(/\D/g, ""),
           type: "cpf",
         },
       },
