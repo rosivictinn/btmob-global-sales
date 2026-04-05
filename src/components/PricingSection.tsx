@@ -21,6 +21,7 @@ const PricingSection = () => {
     {
       name: t.pricing.monthly,
       price: "$650",
+      planKey: "monthly",
       desc: t.pricing.monthlyDesc,
       icon: Crown,
       features: ["30 days access", "All features", "Priority support", "Free updates"],
