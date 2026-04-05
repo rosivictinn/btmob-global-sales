@@ -1,8 +1,7 @@
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import { useLang } from "@/contexts/LangContext";
 import { Check, Crown, Star, Gem } from "lucide-react";
-
-const TELEGRAM_LINK = "https://t.me/bigpatronref";
 
 const PricingSection = () => {
   const { t } = useLang();
