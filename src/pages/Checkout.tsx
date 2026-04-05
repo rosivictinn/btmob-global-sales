@@ -238,7 +238,7 @@ const CheckoutContent = () => {
               </p>
 
               <button
-                onClick={() => { setPixData(null); setName(""); setEmail(""); }}
+                onClick={() => { setPixData(null); setName(""); setEmail(""); setCpf(""); setPhone(""); }}
                 className="w-full border border-primary/30 text-primary font-display font-bold py-2.5 rounded-lg hover:neon-bg hover:text-primary-foreground transition-all text-sm"
               >
                 {lang === "pt" ? "NOVA COMPRA" : "NEW PURCHASE"}
