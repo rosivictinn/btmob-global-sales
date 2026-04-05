@@ -41,6 +41,7 @@ const PricingSection = () => {
     {
       name: t.pricing.lifetimeAdmin,
       price: "$1,600",
+      planKey: "lifetime_admin",
       desc: t.pricing.lifetimeAdminDesc,
       icon: Crown,
       features: ["Lifetime access", "Your own admin panel", "Full autonomy", "VIP priority support", "All future updates"],
