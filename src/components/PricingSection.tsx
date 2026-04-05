@@ -5,6 +5,7 @@ import { Check, Crown, Star, Gem } from "lucide-react";
 
 const PricingSection = () => {
   const { t } = useLang();
+  const navigate = useNavigate();
 
   const plans = [
     {
