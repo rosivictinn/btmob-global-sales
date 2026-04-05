@@ -21,6 +21,8 @@ const CheckoutContent = () => {
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [cpf, setCpf] = useState("");
+  const [phone, setPhone] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [pixData, setPixData] = useState<{
