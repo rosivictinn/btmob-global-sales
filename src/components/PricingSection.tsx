@@ -1,16 +1,17 @@
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import { useLang } from "@/contexts/LangContext";
 import { Check, Crown, Star, Gem } from "lucide-react";
 
-const TELEGRAM_LINK = "https://t.me/bigpatronref";
-
 const PricingSection = () => {
   const { t } = useLang();
+  const navigate = useNavigate();
 
   const plans = [
     {
       name: t.pricing.weekly,
       price: "$400",
+      planKey: "weekly",
       desc: t.pricing.weeklyDesc,
       icon: Star,
       features: ["7 days access", "All features", "Telegram support"],
@@ -20,6 +21,7 @@ const PricingSection = () => {
     {
       name: t.pricing.monthly,
       price: "$650",
+      planKey: "monthly",
       desc: t.pricing.monthlyDesc,
       icon: Crown,
       features: ["30 days access", "All features", "Priority support", "Free updates"],
@@ -29,6 +31,7 @@ const PricingSection = () => {
     {
       name: t.pricing.lifetime,
       price: "$1,100",
+      planKey: "lifetime",
       desc: t.pricing.lifetimeDesc,
       icon: Gem,
       features: ["Lifetime access", "All features", "VIP support", "All future updates"],
@@ -38,6 +41,7 @@ const PricingSection = () => {
     {
       name: t.pricing.lifetimeAdmin,
       price: "$1,600",
+      planKey: "lifetime_admin",
       desc: t.pricing.lifetimeAdminDesc,
       icon: Crown,
       features: ["Lifetime access", "Your own admin panel", "Full autonomy", "VIP priority support", "All future updates"],
@@ -98,18 +102,16 @@ const PricingSection = () => {
                 ))}
               </ul>
 
-              <a
-                href={TELEGRAM_LINK}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`block text-center font-display font-bold text-sm py-3 rounded-lg transition-all duration-300 ${
+              <button
+                onClick={() => navigate(`/checkout?plan=${plan.planKey}`)}
+                className={`block w-full text-center font-display font-bold text-sm py-3 rounded-lg transition-all duration-300 ${
                   plan.highlight
                     ? "neon-bg text-primary-foreground hover:scale-105"
                     : "border border-primary/50 text-primary hover:neon-bg hover:text-primary-foreground"
                 }`}
               >
                 {t.pricing.cta}
-              </a>
+              </button>
             </motion.div>
           ))}
         </div>
