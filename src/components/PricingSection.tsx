@@ -31,6 +31,7 @@ const PricingSection = () => {
     {
       name: t.pricing.lifetime,
       price: "$1,100",
+      planKey: "lifetime",
       desc: t.pricing.lifetimeDesc,
       icon: Gem,
       features: ["Lifetime access", "All features", "VIP support", "All future updates"],
