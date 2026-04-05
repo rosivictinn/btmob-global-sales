@@ -102,18 +102,16 @@ const PricingSection = () => {
                 ))}
               </ul>
 
-              <a
-                href={TELEGRAM_LINK}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`block text-center font-display font-bold text-sm py-3 rounded-lg transition-all duration-300 ${
+              <button
+                onClick={() => navigate(`/checkout?plan=${plan.planKey}`)}
+                className={`block w-full text-center font-display font-bold text-sm py-3 rounded-lg transition-all duration-300 ${
                   plan.highlight
                     ? "neon-bg text-primary-foreground hover:scale-105"
                     : "border border-primary/50 text-primary hover:neon-bg hover:text-primary-foreground"
                 }`}
               >
                 {t.pricing.cta}
-              </a>
+              </button>
             </motion.div>
           ))}
         </div>
