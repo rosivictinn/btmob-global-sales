@@ -41,7 +41,7 @@ const CheckoutContent = () => {
 
     try {
       const { data, error: fnError } = await supabase.functions.invoke("create-pix-payment", {
-        body: { name, email, plan: planKey },
+        body: { name, email, cpf: cpf.replace(/\D/g, ""), phone: phone.replace(/\D/g, ""), plan: planKey },
       });
 
       if (fnError) {
