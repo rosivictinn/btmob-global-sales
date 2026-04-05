@@ -132,6 +132,36 @@ const CheckoutContent = () => {
                 />
               </div>
 
+              <div>
+                <label className="block text-sm font-medium text-foreground/80 mb-1.5">
+                  CPF
+                </label>
+                <input
+                  type="text"
+                  required
+                  value={cpf}
+                  onChange={(e) => setCpf(e.target.value)}
+                  placeholder="000.000.000-00"
+                  maxLength={14}
+                  className="w-full rounded-lg border border-border bg-input px-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-foreground/80 mb-1.5">
+                  {lang === "pt" ? "Telefone" : "Phone"}
+                </label>
+                <input
+                  type="tel"
+                  required
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
+                  placeholder="(11) 99999-9999"
+                  maxLength={15}
+                  className="w-full rounded-lg border border-border bg-input px-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
+                />
+              </div>
+
               {error && (
                 <p className="text-destructive text-sm text-center">{error}</p>
               )}
