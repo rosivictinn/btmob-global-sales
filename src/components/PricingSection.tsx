@@ -11,6 +11,7 @@ const PricingSection = () => {
     {
       name: t.pricing.weekly,
       price: "$400",
+      planKey: "weekly",
       desc: t.pricing.weeklyDesc,
       icon: Star,
       features: ["7 days access", "All features", "Telegram support"],
